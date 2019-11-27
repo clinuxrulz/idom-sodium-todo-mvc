@@ -1,0 +1,18 @@
+{
+  "name": "idom_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify -d -p [ tsify --noImplicitAny ] src/app.ts -o dist/bundle.js && xcopy static\\*.* dist /s /d",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "sodiumjs": "^3.0.7"
+  }
+}
