@@ -1,6 +1,5 @@
 import { DomCtx, DomCtxImpl } from './dom_ctx';
 import * as sodium from 'sodiumjs';
-import { Stack } from 'typescript-collections';
 
 class Model {
     cEntries: sodium.Cell<Entry[]>;
@@ -380,7 +379,7 @@ function viewEntry(todo: Entry, dc: DomCtx<Msg>) {
                 dc.on("click", todo.cCompleted.map(completed => (e: Event) => new MsgCheck(todo.id, !completed)));
             dc.endElement();
             dc.beginElement("label");
-                dc.on("doubleclick", new sodium.Cell((e: Event) => new MsgEditingEntry(todo.id, true)));
+                dc.on("dblclick", new sodium.Cell((e: Event) => new MsgEditingEntry(todo.id, true)));
                 dc.text(todo.cDescription);
             dc.endElement();
             dc.beginElement("button");
