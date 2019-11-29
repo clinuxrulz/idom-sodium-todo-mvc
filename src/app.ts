@@ -496,13 +496,6 @@ function infoFooter(dc: DomCtx<Msg>) {
                 dc.text(new sodium.Cell("Evan Czaplicki"))
             dc.endElement();
         dc.endElement();
-        dc.beginElement("p");
-            dc.text(new sodium.Cell("Part of "));
-            dc.beginElement("a");
-                dc.attr("href", new sodium.Cell("http://todomvc.com"));
-                dc.text(new sodium.Cell("TodoMVC"));
-            dc.endElement();
-        dc.endElement();
     dc.endElement();
 }
 
