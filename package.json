@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "tsify": "^4.0.1"
   },
   "dependencies": {
     "sodiumjs": "^3.0.7"
