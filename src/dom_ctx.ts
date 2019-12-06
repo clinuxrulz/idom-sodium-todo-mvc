@@ -102,17 +102,13 @@ export class DomCtxImpl<MSG> implements DomCtx<MSG> {
         let e = this.state.currentElement;
         e.inits.push(() => {
             let listener = value.listen(x => {
+                if ((e.element as any)["checked"] == x) {
+                    return;
+                }
+                (e.element as any)["checked"] = x;
                 if (x) {
-                    if (e.element.hasAttribute("checked")) {
-                        return;
-                    }
-                    (e as any)["checked"] = x;
                     e.element.setAttribute("checked", "");
                 } else {
-                    if (!e.element.hasAttribute("checked")) {
-                        return;
-                    }
-                    (e as any)["checked"] = x;
                     e.element.removeAttribute("checked");
                 }
             });
